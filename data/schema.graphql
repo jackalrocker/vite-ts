@@ -1,0 +1,1052 @@
+""""""
+directive @auth(add: AuthRule, delete: AuthRule, password: AuthRule, query: AuthRule, update: AuthRule) on INTERFACE | OBJECT
+
+""""""
+directive @cacheControl(maxAge: Int!) on QUERY
+
+""""""
+directive @cascade(fields: [String]) on FIELD
+
+""""""
+directive @custom(dql: String, http: CustomHTTP) on FIELD_DEFINITION
+
+""""""
+directive @dgraph(pred: String, type: String) on FIELD_DEFINITION | INTERFACE | OBJECT
+
+""""""
+directive @generate(mutation: GenerateMutationParams, query: GenerateQueryParams, subscription: Boolean) on INTERFACE | OBJECT
+
+""""""
+directive @hasInverse(field: String!) on FIELD_DEFINITION
+
+""""""
+directive @id(interface: Boolean) on FIELD_DEFINITION
+
+""""""
+directive @lambda on FIELD_DEFINITION
+
+""""""
+directive @lambdaOnMutate(add: Boolean, delete: Boolean, update: Boolean) on INTERFACE | OBJECT
+
+""""""
+directive @remote on ENUM | INPUT_OBJECT | INTERFACE | OBJECT | UNION
+
+""""""
+directive @remoteResponse(name: String) on FIELD_DEFINITION
+
+""""""
+directive @search(by: [DgraphIndex!]) on FIELD_DEFINITION
+
+""""""
+directive @secret(field: String!, pred: String) on INTERFACE | OBJECT
+
+""""""
+directive @withSubscription on FIELD_DEFINITION | INTERFACE | OBJECT
+
+""""""
+input AddAppNodeInput {
+  """"""
+  app_host: String
+
+  """"""
+  app_name: String
+}
+
+""""""
+type AddAppNodePayload {
+  """"""
+  appNode(filter: AppNodeFilter, first: Int, offset: Int, order: AppNodeOrder): [AppNode]
+
+  """"""
+  numUids: Int
+}
+
+""""""
+input AddUrlNodeInput {
+  """"""
+  belong: AppNodeRef
+
+  """"""
+  es_id: String
+
+  """"""
+  url_name: String
+
+  """"""
+  visit_time: String
+
+  """"""
+  visit_user_name: UserNodeRef
+}
+
+""""""
+type AddUrlNodePayload {
+  """"""
+  numUids: Int
+
+  """"""
+  urlNode(filter: UrlNodeFilter, first: Int, offset: Int, order: UrlNodeOrder): [UrlNode]
+}
+
+""""""
+input AddUserNodeInput {
+  """"""
+  user_name: String
+}
+
+""""""
+type AddUserNodePayload {
+  """"""
+  numUids: Int
+
+  """"""
+  userNode(filter: UserNodeFilter, first: Int, offset: Int, order: UserNodeOrder): [UserNode]
+}
+
+""""""
+type AppNode {
+  """"""
+  app_host: String
+
+  """"""
+  app_name: String
+
+  """"""
+  id: ID!
+}
+
+""""""
+type AppNodeAggregateResult {
+  """"""
+  app_hostMax: String
+
+  """"""
+  app_hostMin: String
+
+  """"""
+  app_nameMax: String
+
+  """"""
+  app_nameMin: String
+
+  """"""
+  count: Int
+}
+
+""""""
+input AppNodeFilter {
+  """"""
+  and: [AppNodeFilter]
+
+  """"""
+  has: [AppNodeHasFilter]
+
+  """"""
+  id: [ID!]
+
+  """"""
+  not: AppNodeFilter
+
+  """"""
+  or: [AppNodeFilter]
+}
+
+""""""
+enum AppNodeHasFilter {
+  """"""
+  app_host
+
+  """"""
+  app_name
+}
+
+""""""
+input AppNodeOrder {
+  """"""
+  asc: AppNodeOrderable
+
+  """"""
+  desc: AppNodeOrderable
+
+  """"""
+  then: AppNodeOrder
+}
+
+""""""
+enum AppNodeOrderable {
+  """"""
+  app_host
+
+  """"""
+  app_name
+}
+
+""""""
+input AppNodePatch {
+  """"""
+  app_host: String
+
+  """"""
+  app_name: String
+}
+
+""""""
+input AppNodeRef {
+  """"""
+  app_host: String
+
+  """"""
+  app_name: String
+
+  """"""
+  id: ID
+}
+
+""""""
+input AuthRule {
+  """"""
+  and: [AuthRule]
+
+  """"""
+  not: AuthRule
+
+  """"""
+  or: [AuthRule]
+
+  """"""
+  rule: String
+}
+
+""""""
+input ContainsFilter {
+  """"""
+  point: PointRef
+
+  """"""
+  polygon: PolygonRef
+}
+
+""""""
+input CustomHTTP {
+  """"""
+  body: String
+
+  """"""
+  forwardHeaders: [String!]
+
+  """"""
+  graphql: String
+
+  """"""
+  introspectionHeaders: [String!]
+
+  """"""
+  method: HTTPMethod!
+
+  """"""
+  mode: Mode
+
+  """"""
+  secretHeaders: [String!]
+
+  """"""
+  skipIntrospection: Boolean
+
+  """"""
+  url: String!
+}
+
+"""
+The DateTime scalar type represents date and time as a string in RFC3339 format.
+For example: "1985-04-12T23:20:50.52Z" represents 20 mins 50.52 secs after the 23rd hour of Apr 12th 1985 in UTC.
+"""
+scalar DateTime
+
+""""""
+input DateTimeFilter {
+  """"""
+  between: DateTimeRange
+
+  """"""
+  eq: DateTime
+
+  """"""
+  ge: DateTime
+
+  """"""
+  gt: DateTime
+
+  """"""
+  in: [DateTime]
+
+  """"""
+  le: DateTime
+
+  """"""
+  lt: DateTime
+}
+
+""""""
+input DateTimeRange {
+  """"""
+  max: DateTime!
+
+  """"""
+  min: DateTime!
+}
+
+""""""
+type DeleteAppNodePayload {
+  """"""
+  appNode(filter: AppNodeFilter, first: Int, offset: Int, order: AppNodeOrder): [AppNode]
+
+  """"""
+  msg: String
+
+  """"""
+  numUids: Int
+}
+
+""""""
+type DeleteUrlNodePayload {
+  """"""
+  msg: String
+
+  """"""
+  numUids: Int
+
+  """"""
+  urlNode(filter: UrlNodeFilter, first: Int, offset: Int, order: UrlNodeOrder): [UrlNode]
+}
+
+""""""
+type DeleteUserNodePayload {
+  """"""
+  msg: String
+
+  """"""
+  numUids: Int
+
+  """"""
+  userNode(filter: UserNodeFilter, first: Int, offset: Int, order: UserNodeOrder): [UserNode]
+}
+
+""""""
+enum DgraphIndex {
+  """"""
+  bool
+
+  """"""
+  day
+
+  """"""
+  exact
+
+  """"""
+  float
+
+  """"""
+  fulltext
+
+  """"""
+  geo
+
+  """"""
+  hash
+
+  """"""
+  hour
+
+  """"""
+  int
+
+  """"""
+  int64
+
+  """"""
+  month
+
+  """"""
+  regexp
+
+  """"""
+  term
+
+  """"""
+  trigram
+
+  """"""
+  year
+}
+
+""""""
+input FloatFilter {
+  """"""
+  between: FloatRange
+
+  """"""
+  eq: Float
+
+  """"""
+  ge: Float
+
+  """"""
+  gt: Float
+
+  """"""
+  in: [Float]
+
+  """"""
+  le: Float
+
+  """"""
+  lt: Float
+}
+
+""""""
+input FloatRange {
+  """"""
+  max: Float!
+
+  """"""
+  min: Float!
+}
+
+""""""
+input GenerateMutationParams {
+  """"""
+  add: Boolean
+
+  """"""
+  delete: Boolean
+
+  """"""
+  update: Boolean
+}
+
+""""""
+input GenerateQueryParams {
+  """"""
+  aggregate: Boolean
+
+  """"""
+  get: Boolean
+
+  """"""
+  password: Boolean
+
+  """"""
+  query: Boolean
+}
+
+""""""
+enum HTTPMethod {
+  """"""
+  DELETE
+
+  """"""
+  GET
+
+  """"""
+  PATCH
+
+  """"""
+  POST
+
+  """"""
+  PUT
+}
+
+"""
+The Int64 scalar type represents a signed 64‐bit numeric non‐fractional value.
+Int64 can represent values in range [-(2^63),(2^63 - 1)].
+"""
+scalar Int64
+
+""""""
+input Int64Filter {
+  """"""
+  between: Int64Range
+
+  """"""
+  eq: Int64
+
+  """"""
+  ge: Int64
+
+  """"""
+  gt: Int64
+
+  """"""
+  in: [Int64]
+
+  """"""
+  le: Int64
+
+  """"""
+  lt: Int64
+}
+
+""""""
+input Int64Range {
+  """"""
+  max: Int64!
+
+  """"""
+  min: Int64!
+}
+
+""""""
+input IntFilter {
+  """"""
+  between: IntRange
+
+  """"""
+  eq: Int
+
+  """"""
+  ge: Int
+
+  """"""
+  gt: Int
+
+  """"""
+  in: [Int]
+
+  """"""
+  le: Int
+
+  """"""
+  lt: Int
+}
+
+""""""
+input IntRange {
+  """"""
+  max: Int!
+
+  """"""
+  min: Int!
+}
+
+""""""
+input IntersectsFilter {
+  """"""
+  multiPolygon: MultiPolygonRef
+
+  """"""
+  polygon: PolygonRef
+}
+
+""""""
+enum Mode {
+  """"""
+  BATCH
+
+  """"""
+  SINGLE
+}
+
+""""""
+type MultiPolygon {
+  """"""
+  polygons: [Polygon!]!
+}
+
+""""""
+input MultiPolygonRef {
+  """"""
+  polygons: [PolygonRef!]!
+}
+
+""""""
+type Mutation {
+  """"""
+  addAppNode(input: [AddAppNodeInput!]!): AddAppNodePayload
+
+  """"""
+  addUrlNode(input: [AddUrlNodeInput!]!): AddUrlNodePayload
+
+  """"""
+  addUserNode(input: [AddUserNodeInput!]!): AddUserNodePayload
+
+  """"""
+  deleteAppNode(filter: AppNodeFilter!): DeleteAppNodePayload
+
+  """"""
+  deleteUrlNode(filter: UrlNodeFilter!): DeleteUrlNodePayload
+
+  """"""
+  deleteUserNode(filter: UserNodeFilter!): DeleteUserNodePayload
+
+  """"""
+  updateAppNode(input: UpdateAppNodeInput!): UpdateAppNodePayload
+
+  """"""
+  updateUrlNode(input: UpdateUrlNodeInput!): UpdateUrlNodePayload
+
+  """"""
+  updateUserNode(input: UpdateUserNodeInput!): UpdateUserNodePayload
+}
+
+""""""
+input NearFilter {
+  """"""
+  coordinate: PointRef!
+
+  """"""
+  distance: Float!
+}
+
+""""""
+type Point {
+  """"""
+  latitude: Float!
+
+  """"""
+  longitude: Float!
+}
+
+""""""
+input PointGeoFilter {
+  """"""
+  near: NearFilter
+
+  """"""
+  within: WithinFilter
+}
+
+""""""
+type PointList {
+  """"""
+  points: [Point!]!
+}
+
+""""""
+input PointListRef {
+  """"""
+  points: [PointRef!]!
+}
+
+""""""
+input PointRef {
+  """"""
+  latitude: Float!
+
+  """"""
+  longitude: Float!
+}
+
+""""""
+type Polygon {
+  """"""
+  coordinates: [PointList!]!
+}
+
+""""""
+input PolygonGeoFilter {
+  """"""
+  contains: ContainsFilter
+
+  """"""
+  intersects: IntersectsFilter
+
+  """"""
+  near: NearFilter
+
+  """"""
+  within: WithinFilter
+}
+
+""""""
+input PolygonRef {
+  """"""
+  coordinates: [PointListRef!]!
+}
+
+""""""
+type Query {
+  """"""
+  aggregateAppNode(filter: AppNodeFilter): AppNodeAggregateResult
+
+  """"""
+  aggregateUrlNode(filter: UrlNodeFilter): UrlNodeAggregateResult
+
+  """"""
+  aggregateUserNode(filter: UserNodeFilter): UserNodeAggregateResult
+
+  """"""
+  getAppNode(id: ID!): AppNode
+
+  """"""
+  getUrlNode(id: ID!): UrlNode
+
+  """"""
+  getUserNode(id: ID!): UserNode
+
+  """"""
+  queryAppNode(filter: AppNodeFilter, first: Int, offset: Int, order: AppNodeOrder): [AppNode]
+
+  """"""
+  queryUrlNode(filter: UrlNodeFilter, first: Int, offset: Int, order: UrlNodeOrder): [UrlNode]
+
+  """"""
+  queryUserNode(filter: UserNodeFilter, first: Int, offset: Int, order: UserNodeOrder): [UserNode]
+}
+
+""""""
+input StringExactFilter {
+  """"""
+  between: StringRange
+
+  """"""
+  eq: String
+
+  """"""
+  ge: String
+
+  """"""
+  gt: String
+
+  """"""
+  in: [String]
+
+  """"""
+  le: String
+
+  """"""
+  lt: String
+}
+
+""""""
+input StringFullTextFilter {
+  """"""
+  alloftext: String
+
+  """"""
+  anyoftext: String
+}
+
+""""""
+input StringHashFilter {
+  """"""
+  eq: String
+
+  """"""
+  in: [String]
+}
+
+""""""
+input StringRange {
+  """"""
+  max: String!
+
+  """"""
+  min: String!
+}
+
+""""""
+input StringRegExpFilter {
+  """"""
+  regexp: String
+}
+
+""""""
+input StringTermFilter {
+  """"""
+  allofterms: String
+
+  """"""
+  anyofterms: String
+}
+
+""""""
+input UpdateAppNodeInput {
+  """"""
+  filter: AppNodeFilter!
+
+  """"""
+  remove: AppNodePatch
+
+  """"""
+  set: AppNodePatch
+}
+
+""""""
+type UpdateAppNodePayload {
+  """"""
+  appNode(filter: AppNodeFilter, first: Int, offset: Int, order: AppNodeOrder): [AppNode]
+
+  """"""
+  numUids: Int
+}
+
+""""""
+input UpdateUrlNodeInput {
+  """"""
+  filter: UrlNodeFilter!
+
+  """"""
+  remove: UrlNodePatch
+
+  """"""
+  set: UrlNodePatch
+}
+
+""""""
+type UpdateUrlNodePayload {
+  """"""
+  numUids: Int
+
+  """"""
+  urlNode(filter: UrlNodeFilter, first: Int, offset: Int, order: UrlNodeOrder): [UrlNode]
+}
+
+""""""
+input UpdateUserNodeInput {
+  """"""
+  filter: UserNodeFilter!
+
+  """"""
+  remove: UserNodePatch
+
+  """"""
+  set: UserNodePatch
+}
+
+""""""
+type UpdateUserNodePayload {
+  """"""
+  numUids: Int
+
+  """"""
+  userNode(filter: UserNodeFilter, first: Int, offset: Int, order: UserNodeOrder): [UserNode]
+}
+
+""""""
+type UrlNode {
+  """"""
+  belong(filter: AppNodeFilter): AppNode
+
+  """"""
+  es_id: String
+
+  """"""
+  id: ID!
+
+  """"""
+  url_name: String
+
+  """"""
+  visit_time: String
+
+  """"""
+  visit_user_name(filter: UserNodeFilter): UserNode
+}
+
+""""""
+type UrlNodeAggregateResult {
+  """"""
+  count: Int
+
+  """"""
+  es_idMax: String
+
+  """"""
+  es_idMin: String
+
+  """"""
+  url_nameMax: String
+
+  """"""
+  url_nameMin: String
+
+  """"""
+  visit_timeMax: String
+
+  """"""
+  visit_timeMin: String
+}
+
+""""""
+input UrlNodeFilter {
+  """"""
+  and: [UrlNodeFilter]
+
+  """"""
+  has: [UrlNodeHasFilter]
+
+  """"""
+  id: [ID!]
+
+  """"""
+  not: UrlNodeFilter
+
+  """"""
+  or: [UrlNodeFilter]
+}
+
+""""""
+enum UrlNodeHasFilter {
+  """"""
+  belong
+
+  """"""
+  es_id
+
+  """"""
+  url_name
+
+  """"""
+  visit_time
+
+  """"""
+  visit_user_name
+}
+
+""""""
+input UrlNodeOrder {
+  """"""
+  asc: UrlNodeOrderable
+
+  """"""
+  desc: UrlNodeOrderable
+
+  """"""
+  then: UrlNodeOrder
+}
+
+""""""
+enum UrlNodeOrderable {
+  """"""
+  es_id
+
+  """"""
+  url_name
+
+  """"""
+  visit_time
+}
+
+""""""
+input UrlNodePatch {
+  """"""
+  belong: AppNodeRef
+
+  """"""
+  es_id: String
+
+  """"""
+  url_name: String
+
+  """"""
+  visit_time: String
+
+  """"""
+  visit_user_name: UserNodeRef
+}
+
+""""""
+input UrlNodeRef {
+  """"""
+  belong: AppNodeRef
+
+  """"""
+  es_id: String
+
+  """"""
+  id: ID
+
+  """"""
+  url_name: String
+
+  """"""
+  visit_time: String
+
+  """"""
+  visit_user_name: UserNodeRef
+}
+
+""""""
+type UserNode {
+  """"""
+  id: ID!
+
+  """"""
+  user_name: String
+}
+
+""""""
+type UserNodeAggregateResult {
+  """"""
+  count: Int
+
+  """"""
+  user_nameMax: String
+
+  """"""
+  user_nameMin: String
+}
+
+""""""
+input UserNodeFilter {
+  """"""
+  and: [UserNodeFilter]
+
+  """"""
+  has: [UserNodeHasFilter]
+
+  """"""
+  id: [ID!]
+
+  """"""
+  not: UserNodeFilter
+
+  """"""
+  or: [UserNodeFilter]
+}
+
+""""""
+enum UserNodeHasFilter {
+  """"""
+  user_name
+}
+
+""""""
+input UserNodeOrder {
+  """"""
+  asc: UserNodeOrderable
+
+  """"""
+  desc: UserNodeOrderable
+
+  """"""
+  then: UserNodeOrder
+}
+
+""""""
+enum UserNodeOrderable {
+  """"""
+  user_name
+}
+
+""""""
+input UserNodePatch {
+  """"""
+  user_name: String
+}
+
+""""""
+input UserNodeRef {
+  """"""
+  id: ID
+
+  """"""
+  user_name: String
+}
+
+""""""
+input WithinFilter {
+  """"""
+  polygon: PolygonRef!
+}
