@@ -30,6 +30,8 @@ const RAW_RUNTIME_STATE =
           ["@eslint/js", "npm:8.56.0"],\
           ["@graphql-codegen/cli", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:5.0.1"],\
           ["@graphql-codegen/schema-ast", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:4.0.1"],\
+          ["@stylexjs/open-props", "npm:0.5.1"],\
+          ["@stylexjs/stylex", "npm:0.5.1"],\
           ["@types/eslint__js", "npm:8.42.3"],\
           ["@types/node", "npm:20.11.16"],\
           ["@types/react", "npm:18.2.51"],\
@@ -46,6 +48,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-react-hooks", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:4.6.0"],\
           ["eslint-plugin-react-refresh", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:0.4.5"],\
           ["graphql", "npm:16.8.1"],\
+          ["postcss-value-parser", "npm:4.2.0"],\
           ["prettier", "npm:3.2.4"],\
           ["prettier-eslint", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:16.3.0"],\
           ["react", "npm:18.2.0"],\
@@ -57,7 +60,8 @@ const RAW_RUNTIME_STATE =
           ["relay-runtime", "npm:16.2.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
           ["vite", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:5.0.12"],\
-          ["vite-plugin-relay", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:2.1.0"]\
+          ["vite-plugin-relay", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:2.1.0"],\
+          ["vite-plugin-stylex", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:0.5.0"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -610,6 +614,29 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@babel-plugin-syntax-object-rest-spread-virtual-dc9e8b0d1c/7/home/daniel/.yarn/berry/cache/@babel-plugin-syntax-object-rest-spread-npm-7.8.3-60bd05b6ae-10c0.zip/node_modules/@babel/plugin-syntax-object-rest-spread/",\
         "packageDependencies": [\
           ["@babel/plugin-syntax-object-rest-spread", "virtual:8f58a43f5d42a39ed6ffa302e24cf4772f9cd21723dc696518a6511253608744f2528040158c6f59a70ff827057f26ad2b159af17a39e85dc1551ac2bf8ebd88#npm:7.8.3"],\
+          ["@babel/core", "npm:7.23.9"],\
+          ["@babel/helper-plugin-utils", "npm:7.22.5"],\
+          ["@types/babel__core", null]\
+        ],\
+        "packagePeers": [\
+          "@babel/core",\
+          "@types/babel__core"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@babel/plugin-syntax-typescript", [\
+      ["npm:7.23.3", {\
+        "packageLocation": "../../../../../../home/daniel/.yarn/berry/cache/@babel-plugin-syntax-typescript-npm-7.23.3-d4e4d71527-10c0.zip/node_modules/@babel/plugin-syntax-typescript/",\
+        "packageDependencies": [\
+          ["@babel/plugin-syntax-typescript", "npm:7.23.3"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:60397c42d371bbcb20a732ca67c491c77e749617b77dcda2741fba9b6f4a97b9ace58ff90c8cf57f58715a0cc7417de329d0e6b99ec5beb69931bcb114674b1f#npm:7.23.3", {\
+        "packageLocation": "./.yarn/__virtual__/@babel-plugin-syntax-typescript-virtual-33a1a259ca/7/home/daniel/.yarn/berry/cache/@babel-plugin-syntax-typescript-npm-7.23.3-d4e4d71527-10c0.zip/node_modules/@babel/plugin-syntax-typescript/",\
+        "packageDependencies": [\
+          ["@babel/plugin-syntax-typescript", "virtual:60397c42d371bbcb20a732ca67c491c77e749617b77dcda2741fba9b6f4a97b9ace58ff90c8cf57f58715a0cc7417de329d0e6b99ec5beb69931bcb114674b1f#npm:7.23.3"],\
           ["@babel/core", "npm:7.23.9"],\
           ["@babel/helper-plugin-utils", "npm:7.22.5"],\
           ["@types/babel__core", null]\
@@ -2806,6 +2833,57 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@stylexjs/babel-plugin", [\
+      ["npm:0.5.1", {\
+        "packageLocation": "../../../../../../home/daniel/.yarn/berry/cache/@stylexjs-babel-plugin-npm-0.5.1-1adf571d84-10c0.zip/node_modules/@stylexjs/babel-plugin/",\
+        "packageDependencies": [\
+          ["@stylexjs/babel-plugin", "npm:0.5.1"],\
+          ["@babel/core", "npm:7.23.9"],\
+          ["@babel/helper-module-imports", "npm:7.22.15"],\
+          ["@babel/traverse", "npm:7.23.9"],\
+          ["@babel/types", "npm:7.23.9"],\
+          ["@stylexjs/shared", "npm:0.5.1"],\
+          ["@stylexjs/stylex", "npm:0.5.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@stylexjs/open-props", [\
+      ["npm:0.5.1", {\
+        "packageLocation": "../../../../../../home/daniel/.yarn/berry/cache/@stylexjs-open-props-npm-0.5.1-d4d8757892-10c0.zip/node_modules/@stylexjs/open-props/",\
+        "packageDependencies": [\
+          ["@stylexjs/open-props", "npm:0.5.1"],\
+          ["css-mediaquery", "npm:0.1.2"],\
+          ["invariant", "npm:2.2.4"],\
+          ["styleq", "npm:0.1.3"],\
+          ["utility-types", "npm:3.11.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@stylexjs/shared", [\
+      ["npm:0.5.1", {\
+        "packageLocation": "../../../../../../home/daniel/.yarn/berry/cache/@stylexjs-shared-npm-0.5.1-96050830ae-10c0.zip/node_modules/@stylexjs/shared/",\
+        "packageDependencies": [\
+          ["@stylexjs/shared", "npm:0.5.1"],\
+          ["postcss-value-parser", "npm:4.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@stylexjs/stylex", [\
+      ["npm:0.5.1", {\
+        "packageLocation": "../../../../../../home/daniel/.yarn/berry/cache/@stylexjs-stylex-npm-0.5.1-98e1a1d341-10c0.zip/node_modules/@stylexjs/stylex/",\
+        "packageDependencies": [\
+          ["@stylexjs/stylex", "npm:0.5.1"],\
+          ["css-mediaquery", "npm:0.1.2"],\
+          ["invariant", "npm:2.2.4"],\
+          ["styleq", "npm:0.1.3"],\
+          ["utility-types", "npm:3.11.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@swc/core", [\
       ["npm:1.3.107", {\
         "packageLocation": "./.yarn/unplugged/@swc-core-virtual-6c3a22a864/node_modules/@swc/core/",\
@@ -4150,6 +4228,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["compare-versions", [\
+      ["npm:6.1.0", {\
+        "packageLocation": "../../../../../../home/daniel/.yarn/berry/cache/compare-versions-npm-6.1.0-43f6eabab2-10c0.zip/node_modules/compare-versions/",\
+        "packageDependencies": [\
+          ["compare-versions", "npm:6.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["concat-map", [\
       ["npm:0.0.1", {\
         "packageLocation": "../../../../../../home/daniel/.yarn/berry/cache/concat-map-npm-0.0.1-85a921b7ee-10c0.zip/node_modules/concat-map/",\
@@ -4257,6 +4344,15 @@ const RAW_RUNTIME_STATE =
           ["path-key", "npm:3.1.1"],\
           ["shebang-command", "npm:2.0.0"],\
           ["which", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["css-mediaquery", [\
+      ["npm:0.1.2", {\
+        "packageLocation": "../../../../../../home/daniel/.yarn/berry/cache/css-mediaquery-npm-0.1.2-39b61fbcad-10c0.zip/node_modules/css-mediaquery/",\
+        "packageDependencies": [\
+          ["css-mediaquery", "npm:0.1.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -6768,6 +6864,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["postcss-value-parser", [\
+      ["npm:4.2.0", {\
+        "packageLocation": "../../../../../../home/daniel/.yarn/berry/cache/postcss-value-parser-npm-4.2.0-3cef602a6a-10c0.zip/node_modules/postcss-value-parser/",\
+        "packageDependencies": [\
+          ["postcss-value-parser", "npm:4.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["prelude-ls", [\
       ["npm:1.2.1", {\
         "packageLocation": "../../../../../../home/daniel/.yarn/berry/cache/prelude-ls-npm-1.2.1-3e4d272a55-10c0.zip/node_modules/prelude-ls/",\
@@ -7621,6 +7726,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["styleq", [\
+      ["npm:0.1.3", {\
+        "packageLocation": "../../../../../../home/daniel/.yarn/berry/cache/styleq-npm-0.1.3-b42f2b887e-10c0.zip/node_modules/styleq/",\
+        "packageDependencies": [\
+          ["styleq", "npm:0.1.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["supports-color", [\
       ["npm:2.0.0", {\
         "packageLocation": "../../../../../../home/daniel/.yarn/berry/cache/supports-color-npm-2.0.0-22c0f0adbc-10c0.zip/node_modules/supports-color/",\
@@ -7970,6 +8084,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["utility-types", [\
+      ["npm:3.11.0", {\
+        "packageLocation": "../../../../../../home/daniel/.yarn/berry/cache/utility-types-npm-3.11.0-5b9c56f39f-10c0.zip/node_modules/utility-types/",\
+        "packageDependencies": [\
+          ["utility-types", "npm:3.11.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["value-or-promise", [\
       ["npm:1.0.12", {\
         "packageLocation": "../../../../../../home/daniel/.yarn/berry/cache/value-or-promise-npm-1.0.12-4f73820639-10c0.zip/node_modules/value-or-promise/",\
@@ -8054,6 +8177,38 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["vite-plugin-stylex", [\
+      ["npm:0.5.0", {\
+        "packageLocation": "../../../../../../home/daniel/.yarn/berry/cache/vite-plugin-stylex-npm-0.5.0-26935a4e8f-10c0.zip/node_modules/vite-plugin-stylex/",\
+        "packageDependencies": [\
+          ["vite-plugin-stylex", "npm:0.5.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:0.5.0", {\
+        "packageLocation": "./.yarn/__virtual__/vite-plugin-stylex-virtual-60397c42d3/7/home/daniel/.yarn/berry/cache/vite-plugin-stylex-npm-0.5.0-26935a4e8f-10c0.zip/node_modules/vite-plugin-stylex/",\
+        "packageDependencies": [\
+          ["vite-plugin-stylex", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:0.5.0"],\
+          ["@babel/core", "npm:7.23.9"],\
+          ["@babel/plugin-syntax-flow", "virtual:8f58a43f5d42a39ed6ffa302e24cf4772f9cd21723dc696518a6511253608744f2528040158c6f59a70ff827057f26ad2b159af17a39e85dc1551ac2bf8ebd88#npm:7.23.3"],\
+          ["@babel/plugin-syntax-jsx", "virtual:8f58a43f5d42a39ed6ffa302e24cf4772f9cd21723dc696518a6511253608744f2528040158c6f59a70ff827057f26ad2b159af17a39e85dc1551ac2bf8ebd88#npm:7.23.3"],\
+          ["@babel/plugin-syntax-typescript", "virtual:60397c42d371bbcb20a732ca67c491c77e749617b77dcda2741fba9b6f4a97b9ace58ff90c8cf57f58715a0cc7417de329d0e6b99ec5beb69931bcb114674b1f#npm:7.23.3"],\
+          ["@stylexjs/babel-plugin", "npm:0.5.1"],\
+          ["@stylexjs/stylex", "npm:0.5.1"],\
+          ["@types/stylexjs__stylex", null],\
+          ["@types/vite", null],\
+          ["compare-versions", "npm:6.1.0"],\
+          ["vite", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:5.0.12"]\
+        ],\
+        "packagePeers": [\
+          "@stylexjs/stylex",\
+          "@types/stylexjs__stylex",\
+          "@types/vite",\
+          "vite"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["vite-ts", [\
       ["workspace:.", {\
         "packageLocation": "./",\
@@ -8063,6 +8218,8 @@ const RAW_RUNTIME_STATE =
           ["@eslint/js", "npm:8.56.0"],\
           ["@graphql-codegen/cli", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:5.0.1"],\
           ["@graphql-codegen/schema-ast", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:4.0.1"],\
+          ["@stylexjs/open-props", "npm:0.5.1"],\
+          ["@stylexjs/stylex", "npm:0.5.1"],\
           ["@types/eslint__js", "npm:8.42.3"],\
           ["@types/node", "npm:20.11.16"],\
           ["@types/react", "npm:18.2.51"],\
@@ -8079,6 +8236,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-react-hooks", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:4.6.0"],\
           ["eslint-plugin-react-refresh", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:0.4.5"],\
           ["graphql", "npm:16.8.1"],\
+          ["postcss-value-parser", "npm:4.2.0"],\
           ["prettier", "npm:3.2.4"],\
           ["prettier-eslint", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:16.3.0"],\
           ["react", "npm:18.2.0"],\
@@ -8090,7 +8248,8 @@ const RAW_RUNTIME_STATE =
           ["relay-runtime", "npm:16.2.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
           ["vite", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:5.0.12"],\
-          ["vite-plugin-relay", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:2.1.0"]\
+          ["vite-plugin-relay", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:2.1.0"],\
+          ["vite-plugin-stylex", "virtual:03a3695d42971721fd6849341021f5a1ee1a5c7e67fd182458e7cd01e3ec904f7716dba974ee020139ee211f1f5dea1d716579da7f536cbadb8d93c6205152b6#npm:0.5.0"]\
         ],\
         "linkType": "SOFT"\
       }]\
