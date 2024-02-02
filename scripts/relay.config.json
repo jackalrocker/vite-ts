@@ -5,6 +5,6 @@
   "eagerEsModules": true,
   "exclude": ["**/node_modules/**", "**/__mocks__/**", "**/__generated__/**", "**/data/**", "codegen.ts"],
   "artifactDirectory": "./src/__generated__/",
-  "customScalars": { "DateTime": "string" },
+  "customScalarTypes": { "DateTime": "string" },
   "noFutureProofEnums": true
 }

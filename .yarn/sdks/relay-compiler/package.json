@@ -1,6 +1,6 @@
 {
   "name": "relay-compiler",
-  "version": "16.0.0-sdk",
+  "version": "16.2.0-sdk",
   "main": "index.js",
   "type": "commonjs",
   "bin": "cli.js"
