@@ -1521,6 +1521,49 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hwdash/web@workspace:apps/web":
+  version: 0.0.0-use.local
+  resolution: "@hwdash/web@workspace:apps/web"
+  dependencies:
+    "@babel/runtime": "npm:^7.23.9"
+    "@eslint/js": "npm:^8.55.0"
+    "@graphql-codegen/cli": "npm:^5.0.0"
+    "@graphql-codegen/schema-ast": "npm:^4.0.0"
+    "@stylexjs/open-props": "npm:^0.5.1"
+    "@stylexjs/stylex": "npm:^0.5.1"
+    "@types/eslint__js": "npm:^8"
+    "@types/node": "npm:^20.10.2"
+    "@types/react": "npm:^18.2.37"
+    "@types/react-dom": "npm:^18.2.15"
+    "@types/react-relay": "npm:^16.0.6"
+    "@types/relay-compiler": "npm:^14.0.3"
+    "@types/relay-runtime": "npm:^14.1.22"
+    "@typescript-eslint/eslint-plugin": "npm:^6.20.0"
+    "@typescript-eslint/parser": "npm:^6.20.0"
+    "@vitejs/plugin-react-swc": "npm:^3.6.0"
+    babel-plugin-relay: "npm:^16.2.0"
+    eslint: "npm:^8.55.0"
+    eslint-config-prettier: "npm:^9.1.0"
+    eslint-plugin-react-hooks: "npm:^4.6.0"
+    eslint-plugin-react-refresh: "npm:^0.4.5"
+    graphql: "npm:^16.8.1"
+    postcss-value-parser: "npm:^4.2.0"
+    prettier: "npm:^3.2.4"
+    prettier-eslint: "npm:^16.1.2"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    react-relay: "npm:^16.2.0"
+    react-router: "npm:^6.22.0"
+    react-router-dom: "npm:^6.22.0"
+    relay-compiler: "npm:^16.2.0"
+    relay-runtime: "npm:^16.2.0"
+    typescript: "npm:^5.3.3"
+    vite: "npm:^5.0.0"
+    vite-plugin-relay: "npm:^2.1.0"
+    vite-plugin-stylex: "npm:^0.5.0"
+  languageName: unknown
+  linkType: soft
+
 "@isaacs/cliui@npm:^8.0.2":
   version: 8.0.2
   resolution: "@isaacs/cliui@npm:8.0.2"
@@ -2061,13 +2104,13 @@ __metadata:
   linkType: hard
 
 "@types/react@npm:*, @types/react@npm:^18.2.37":
-  version: 18.2.51
-  resolution: "@types/react@npm:18.2.51"
+  version: 18.2.52
+  resolution: "@types/react@npm:18.2.52"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10c0/409f684dc1cb03ed542e1f185da7e84f81186d7945119adb553fe0e4e28bad3468213fce9096e1867b358c87fb57fc80b53a3e544a3779f7080ddde7c1b99eb1
+  checksum: 10c0/1c7b2297deb09f31eb1d0c34107c89013022a9e1cba6d393f9a872bdc456da2f1ff25415c09f97dbf880cef98ade526681bd1d1b8300091b28651d23af7e7aac
   languageName: node
   linkType: hard
 
@@ -3200,9 +3243,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.648":
-  version: 1.4.655
-  resolution: "electron-to-chromium@npm:1.4.655"
-  checksum: 10c0/a96c56496803240e351fc2130cf0395c67fc4b87fab985560c462a4f2df0965986b4594e7069b6cee548f5cdae75522e27a97b0ef6cffb1321a52b08e6f7300b
+  version: 1.4.656
+  resolution: "electron-to-chromium@npm:1.4.656"
+  checksum: 10c0/3b4eafac9ef11bbc33632d4d2c038eab921e5b3e85526a118b9a6bc06d3c93d7ad1b4e8cefdf12a4f96166ccc99df3ae1075911070be7c9d4fb82f29995ecb44
   languageName: node
   linkType: hard
 
@@ -3249,6 +3292,13 @@ __metadata:
   dependencies:
     is-arrayish: "npm:^0.2.1"
   checksum: 10c0/ba827f89369b4c93382cfca5a264d059dfefdaa56ecc5e338ffa58a6471f5ed93b71a20add1d52290a4873d92381174382658c885ac1a2305f7baca363ce9cce
+  languageName: node
+  linkType: hard
+
+"es-errors@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "es-errors@npm:1.0.0"
+  checksum: 10c0/f0327e7042e91efa0cfe3daa61a1381b49d04dc3ff10325275c953b8ec53196473fd84acf41e705f00873cbb574945f1e53952f934da7c745362ed40d8ae1fa9
   languageName: node
   linkType: hard
 
@@ -3382,6 +3432,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-simple-import-sort@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "eslint-plugin-simple-import-sort@npm:10.0.0"
+  peerDependencies:
+    eslint: ">=5.0.0"
+  checksum: 10c0/1ae0814d23816d51d010cfbc5ee0a0dde8d825a3093876b2e8219a0562d53f4d4794508551e503ebe2ea98904cb35204dbe54dfbf9d7fc8b8e3ea25c52aa68ac
+  languageName: node
+  linkType: hard
+
 "eslint-scope@npm:^7.1.1, eslint-scope@npm:^7.2.2":
   version: 7.2.2
   resolution: "eslint-scope@npm:7.2.2"
@@ -3399,7 +3458,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.55.0, eslint@npm:^8.7.0":
+"eslint@npm:^8.55.0, eslint@npm:^8.56.0, eslint@npm:^8.7.0":
   version: 8.56.0
   resolution: "eslint@npm:8.56.0"
   dependencies:
@@ -3765,14 +3824,15 @@ __metadata:
   linkType: hard
 
 "get-intrinsic@npm:^1.1.3, get-intrinsic@npm:^1.2.1, get-intrinsic@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "get-intrinsic@npm:1.2.2"
+  version: 1.2.3
+  resolution: "get-intrinsic@npm:1.2.3"
   dependencies:
+    es-errors: "npm:^1.0.0"
     function-bind: "npm:^1.1.2"
     has-proto: "npm:^1.0.1"
     has-symbols: "npm:^1.0.3"
     hasown: "npm:^2.0.0"
-  checksum: 10c0/4e7fb8adc6172bae7c4fe579569b4d5238b3667c07931cd46b4eee74bbe6ff6b91329bec311a638d8e60f5b51f44fe5445693c6be89ae88d4b5c49f7ff12db0b
+  checksum: 10c0/80a81ce08d98e75f92982a35254b45d6f381838d8a20a5c7a19858c77c9ec9212a01c17f2429f27c488ce36891bc08073f8e5a6cfb8858f768d54f11e38f40fe
   languageName: node
   linkType: hard
 
@@ -4038,6 +4098,21 @@ __metadata:
   checksum: 10c0/7735eb90073db087e7e79312e3d97c8c04baf7ea7ca7b013382b6a45abbaa61b281041a98f4e13c8c80d88f843785bcc84ba189165b4b4087b1e3496ba656d77
   languageName: node
   linkType: hard
+
+"hwdash@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "hwdash@workspace:."
+  dependencies:
+    "@typescript-eslint/eslint-plugin": "npm:^6.20.0"
+    "@typescript-eslint/parser": "npm:^6.20.0"
+    eslint: "npm:^8.56.0"
+    eslint-config-prettier: "npm:^9.1.0"
+    eslint-plugin-react-hooks: "npm:^4.6.0"
+    eslint-plugin-simple-import-sort: "npm:^10.0.0"
+    prettier: "npm:^3.2.5"
+    typescript: "npm:5.3.3"
+  languageName: unknown
+  linkType: soft
 
 "iconv-lite@npm:^0.4.24":
   version: 0.4.24
@@ -4362,9 +4437,9 @@ __metadata:
   linkType: hard
 
 "jose@npm:^5.0.0":
-  version: 5.2.0
-  resolution: "jose@npm:5.2.0"
-  checksum: 10c0/a5631e9a7148fb56c8feca8e00d1f03de6fa6e18e494fe62428b53bed525a9dba554ff3e860bdfc4aee60574194691015ba991557874ae826509c4c19dba4fea
+  version: 5.2.1
+  resolution: "jose@npm:5.2.1"
+  checksum: 10c0/76044e4cba28a4326c9fd8ba8bd1c1d99624d4dad4a20238b3fe44e2227d301ca7cb049d3ad3bb481b61a77c929c814ab59bafafbbe2b1d901d4007411a1d97a
   languageName: node
   linkType: hard
 
@@ -5232,7 +5307,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-value-parser@npm:^4.1.0, postcss-value-parser@npm:^4.2.0":
+"postcss-value-parser@npm:*, postcss-value-parser@npm:^4.1.0, postcss-value-parser@npm:^4.2.0":
   version: 4.2.0
   resolution: "postcss-value-parser@npm:4.2.0"
   checksum: 10c0/f4142a4f56565f77c1831168e04e3effd9ffcc5aebaf0f538eee4b2d465adfd4b85a44257bb48418202a63806a7da7fe9f56c330aebb3cac898e46b4cbf49161
@@ -5285,12 +5360,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.0.1, prettier@npm:^3.2.4":
-  version: 3.2.4
-  resolution: "prettier@npm:3.2.4"
+"prettier@npm:^3.0.1, prettier@npm:^3.2.4, prettier@npm:^3.2.5":
+  version: 3.2.5
+  resolution: "prettier@npm:3.2.5"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 10c0/88dfeb78ac6096522c9a5b81f1413d875f568420d9bb6a5e5103527912519b993f2bcdcac311fcff5718d5869671d44e4f85827d3626f3a6ce32b9abc65d88e0
+  checksum: 10c0/ea327f37a7d46f2324a34ad35292af2ad4c4c3c3355da07313339d7e554320f66f65f91e856add8530157a733c6c4a897dc41b577056be5c24c40f739f5ee8c6
   languageName: node
   linkType: hard
 
@@ -6167,7 +6242,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.2.2, typescript@npm:^5.3.3":
+"typescript@npm:5.3.3":
   version: 5.3.3
   resolution: "typescript@npm:5.3.3"
   bin:
@@ -6177,7 +6252,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.2.2#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.3.3#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>":
   version: 5.3.3
   resolution: "typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"
   bin:
@@ -6339,49 +6414,6 @@ __metadata:
   checksum: 10c0/79226e6403218a73c167df78780afcd6f6324a52cb12628902c1f1b9c448126dc9826c0a37d34deadd46c9c77861b1b0ae37ee85b8faa73d665680fc04e19c1b
   languageName: node
   linkType: hard
-
-"vite-ts@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "vite-ts@workspace:."
-  dependencies:
-    "@babel/runtime": "npm:^7.23.9"
-    "@eslint/js": "npm:^8.55.0"
-    "@graphql-codegen/cli": "npm:^5.0.0"
-    "@graphql-codegen/schema-ast": "npm:^4.0.0"
-    "@stylexjs/open-props": "npm:^0.5.1"
-    "@stylexjs/stylex": "npm:^0.5.1"
-    "@types/eslint__js": "npm:^8"
-    "@types/node": "npm:^20.10.2"
-    "@types/react": "npm:^18.2.37"
-    "@types/react-dom": "npm:^18.2.15"
-    "@types/react-relay": "npm:^16.0.6"
-    "@types/relay-compiler": "npm:^14.0.3"
-    "@types/relay-runtime": "npm:^14.1.22"
-    "@typescript-eslint/eslint-plugin": "npm:^6.20.0"
-    "@typescript-eslint/parser": "npm:^6.20.0"
-    "@vitejs/plugin-react-swc": "npm:^3.6.0"
-    babel-plugin-relay: "npm:^16.2.0"
-    eslint: "npm:^8.55.0"
-    eslint-config-prettier: "npm:^9.1.0"
-    eslint-plugin-react-hooks: "npm:^4.6.0"
-    eslint-plugin-react-refresh: "npm:^0.4.5"
-    graphql: "npm:^16.8.1"
-    postcss-value-parser: "npm:^4.2.0"
-    prettier: "npm:^3.2.4"
-    prettier-eslint: "npm:^16.1.2"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    react-relay: "npm:^16.2.0"
-    react-router: "npm:^6.22.0"
-    react-router-dom: "npm:^6.22.0"
-    relay-compiler: "npm:^16.2.0"
-    relay-runtime: "npm:^16.2.0"
-    typescript: "npm:^5.3.3"
-    vite: "npm:^5.0.0"
-    vite-plugin-relay: "npm:^2.1.0"
-    vite-plugin-stylex: "npm:^0.5.0"
-  languageName: unknown
-  linkType: soft
 
 "vite@npm:^5.0.0":
   version: 5.0.12
