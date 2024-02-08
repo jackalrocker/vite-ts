@@ -38,6 +38,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-react-hooks", "virtual:842e300f71adc049ac02ec99b1750ddabfa7f01722bd65ef6d19371d38d09aaa0e9b8aa380a958a020d11b8eef9ab8c581ac80a06ab54b2f6c55ec53026fb0e3#npm:4.6.0"],\
           ["eslint-plugin-simple-import-sort", "virtual:842e300f71adc049ac02ec99b1750ddabfa7f01722bd65ef6d19371d38d09aaa0e9b8aa380a958a020d11b8eef9ab8c581ac80a06ab54b2f6c55ec53026fb0e3#npm:10.0.0"],\
           ["prettier", "npm:3.2.5"],\
+          ["relay-compiler", "npm:16.2.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
         "linkType": "SOFT"\
@@ -2508,7 +2509,6 @@ const RAW_RUNTIME_STATE =
           ["react-relay", "virtual:88298c1d89e3bce35471adb6c4156806ce473d740435fb5f463aec461dce79d3bd5791cb6103617fe1a957ad23d4ee5d2f887989e8fc3e9b0c095b8c45ab0b1e#npm:16.2.0"],\
           ["react-router", "virtual:88298c1d89e3bce35471adb6c4156806ce473d740435fb5f463aec461dce79d3bd5791cb6103617fe1a957ad23d4ee5d2f887989e8fc3e9b0c095b8c45ab0b1e#npm:6.22.0"],\
           ["react-router-dom", "virtual:88298c1d89e3bce35471adb6c4156806ce473d740435fb5f463aec461dce79d3bd5791cb6103617fe1a957ad23d4ee5d2f887989e8fc3e9b0c095b8c45ab0b1e#npm:6.22.0"],\
-          ["relay-compiler", "npm:16.2.0"],\
           ["relay-runtime", "npm:16.2.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
           ["vite", "virtual:88298c1d89e3bce35471adb6c4156806ce473d740435fb5f463aec461dce79d3bd5791cb6103617fe1a957ad23d4ee5d2f887989e8fc3e9b0c095b8c45ab0b1e#npm:5.0.12"],\
@@ -5548,6 +5548,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-react-hooks", "virtual:842e300f71adc049ac02ec99b1750ddabfa7f01722bd65ef6d19371d38d09aaa0e9b8aa380a958a020d11b8eef9ab8c581ac80a06ab54b2f6c55ec53026fb0e3#npm:4.6.0"],\
           ["eslint-plugin-simple-import-sort", "virtual:842e300f71adc049ac02ec99b1750ddabfa7f01722bd65ef6d19371d38d09aaa0e9b8aa380a958a020d11b8eef9ab8c581ac80a06ab54b2f6c55ec53026fb0e3#npm:10.0.0"],\
           ["prettier", "npm:3.2.5"],\
+          ["relay-compiler", "npm:16.2.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
         "linkType": "SOFT"\

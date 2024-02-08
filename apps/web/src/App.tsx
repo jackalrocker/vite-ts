@@ -3,6 +3,16 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Card from "./Card";
+import { graphql } from "relay-runtime";
+
+
+const appQuery = graphql`
+  query AppQuery @preloadable {
+    getUrlNode(id: "0x2"){ 
+      id
+    }
+  }
+`
 
 const App: React.FC = () => {
   const [count, setCount] = useState(0);

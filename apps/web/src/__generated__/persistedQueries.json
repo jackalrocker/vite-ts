@@ -1,0 +1,3 @@
+{
+  "13814b381ef3cb0e74824b1442b89f24": "query AppQuery {\n  getUrlNode(id: \"0x2\") {\n    id\n  }\n}\n"
+}

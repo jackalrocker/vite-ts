@@ -45,7 +45,6 @@
     "postcss-value-parser": "^4.2.0",
     "prettier": "^3.2.4",
     "prettier-eslint": "^16.1.2",
-    "relay-compiler": "^16.2.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.0",
     "vite-plugin-relay": "^2.1.0",
