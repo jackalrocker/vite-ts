@@ -8,11 +8,21 @@ import { graphql } from "relay-runtime";
 
 const appQuery = graphql`
   query AppQuery @preloadable {
-    getUrlNode(id: "0x2"){ 
+    getUrlNode(id: "0x3"){ 
       id
+      visit_user_name {
+        ...AppUserNodeFragment_user
+      }
     }
   }
-`
+`;
+
+const appUserNodeFragmen = graphql`
+  fragment AppUserNodeFragment_user on UserNode {
+    id
+    user_name
+  }
+`;
 
 const App: React.FC = () => {
   const [count, setCount] = useState(0);

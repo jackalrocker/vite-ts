@@ -1,0 +1,7 @@
+{
+  "13814b381ef3cb0e74824b1442b89f24": "query AppQuery {\n  getUrlNode(id: \"0x2\") {\n    id\n  }\n}\n",
+  "23c6e751bc7b2e93df99b04c0864e264": "query AppQuery {\n  getUrlNode(id: \"0x3\") {\n    id\n  }\n}\n",
+  "3e1448111fa356af9b51fd74573e9547": "query AppQuery {\n  getUrlNode(id: \"0x4\") {\n    id\n  }\n}\n",
+  "86a28175dc670afd171c87ddb9dbb171": "query AppQuery {\n  getUrlNode(id: \"0x3\") {\n    id\n    visit_user_name {\n      ...AppUserNodeFragment_user\n      id\n    }\n  }\n}\n\nfragment AppUserNodeFragment_user on UserNode {\n  id\n}\n",
+  "a09efed367d06a855ab5beb6666b7ee2": "query AppQuery {\n  getUrlNode(id: \"0x3\") {\n    id\n    visit_user_name {\n      ...AppUserNodeFragment_user\n      id\n    }\n  }\n}\n\nfragment AppUserNodeFragment_user on UserNode {\n  id\n  user_name\n}\n"
+}
