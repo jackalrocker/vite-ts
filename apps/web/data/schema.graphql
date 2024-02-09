@@ -44,162 +44,144 @@ directive @secret(field: String!, pred: String) on INTERFACE | OBJECT
 directive @withSubscription on FIELD_DEFINITION | INTERFACE | OBJECT
 
 """"""
-input AddAppNodeInput {
+input AddAppleInput {
   """"""
-  app_host: String
+  color: String!
 
   """"""
-  app_name: String
+  isMortal: Boolean!
+
+  """"""
+  name: String!
 }
 
 """"""
-type AddAppNodePayload {
+type AddApplePayload {
   """"""
-  appNode(filter: AppNodeFilter, first: Int, offset: Int, order: AppNodeOrder): [AppNode]
+  apple(filter: AppleFilter, first: Int, offset: Int, order: AppleOrder): [Apple]
 
   """"""
   numUids: Int
 }
 
 """"""
-input AddUrlNodeInput {
+input AddPearInput {
   """"""
-  belong: AppNodeRef
+  name: String!
 
   """"""
-  es_id: String
-
-  """"""
-  url_name: String
-
-  """"""
-  visit_time: String
-
-  """"""
-  visit_user_name: UserNodeRef
+  weight: Int!
 }
 
 """"""
-type AddUrlNodePayload {
+type AddPearPayload {
   """"""
   numUids: Int
 
   """"""
-  urlNode(filter: UrlNodeFilter, first: Int, offset: Int, order: UrlNodeOrder): [UrlNode]
+  pear(filter: PearFilter, first: Int, offset: Int, order: PearOrder): [Pear]
 }
 
 """"""
-input AddUserNodeInput {
+type Apple implements Edible & Fruit {
   """"""
-  user_name: String
+  color: String!
+
+  """"""
+  isMortal: Boolean!
+
+  """"""
+  name: String!
 }
 
 """"""
-type AddUserNodePayload {
+type AppleAggregateResult {
   """"""
-  numUids: Int
+  colorMax: String
 
   """"""
-  userNode(filter: UserNodeFilter, first: Int, offset: Int, order: UserNodeOrder): [UserNode]
-}
-
-""""""
-type AppNode {
-  """"""
-  app_host: String
-
-  """"""
-  app_name: String
-
-  """"""
-  id: ID!
-}
-
-""""""
-type AppNodeAggregateResult {
-  """"""
-  app_hostMax: String
-
-  """"""
-  app_hostMin: String
-
-  """"""
-  app_nameMax: String
-
-  """"""
-  app_nameMin: String
+  colorMin: String
 
   """"""
   count: Int
+
+  """"""
+  nameMax: String
+
+  """"""
+  nameMin: String
 }
 
 """"""
-input AppNodeFilter {
+input AppleFilter {
   """"""
-  and: [AppNodeFilter]
+  and: [AppleFilter]
 
   """"""
-  has: [AppNodeHasFilter]
+  has: [AppleHasFilter]
 
   """"""
-  id: [ID!]
+  not: AppleFilter
 
   """"""
-  not: AppNodeFilter
-
-  """"""
-  or: [AppNodeFilter]
+  or: [AppleFilter]
 }
 
 """"""
-enum AppNodeHasFilter {
+enum AppleHasFilter {
   """"""
-  app_host
+  color
 
   """"""
-  app_name
+  isMortal
+
+  """"""
+  name
 }
 
 """"""
-input AppNodeOrder {
+input AppleOrder {
   """"""
-  asc: AppNodeOrderable
+  asc: AppleOrderable
 
   """"""
-  desc: AppNodeOrderable
+  desc: AppleOrderable
 
   """"""
-  then: AppNodeOrder
+  then: AppleOrder
 }
 
 """"""
-enum AppNodeOrderable {
+enum AppleOrderable {
   """"""
-  app_host
+  color
 
   """"""
-  app_name
+  name
 }
 
 """"""
-input AppNodePatch {
+input ApplePatch {
   """"""
-  app_host: String
+  color: String
 
   """"""
-  app_name: String
+  isMortal: Boolean
+
+  """"""
+  name: String
 }
 
 """"""
-input AppNodeRef {
+input AppleRef {
   """"""
-  app_host: String
+  color: String
 
   """"""
-  app_name: String
+  isMortal: Boolean
 
   """"""
-  id: ID
+  name: String
 }
 
 """"""
@@ -296,9 +278,9 @@ input DateTimeRange {
 }
 
 """"""
-type DeleteAppNodePayload {
+type DeleteApplePayload {
   """"""
-  appNode(filter: AppNodeFilter, first: Int, offset: Int, order: AppNodeOrder): [AppNode]
+  apple(filter: AppleFilter, first: Int, offset: Int, order: AppleOrder): [Apple]
 
   """"""
   msg: String
@@ -308,19 +290,31 @@ type DeleteAppNodePayload {
 }
 
 """"""
-type DeleteUrlNodePayload {
+type DeleteEdiblePayload {
+  """"""
+  edible(filter: EdibleFilter, first: Int, offset: Int): [Edible]
+
   """"""
   msg: String
 
   """"""
   numUids: Int
-
-  """"""
-  urlNode(filter: UrlNodeFilter, first: Int, offset: Int, order: UrlNodeOrder): [UrlNode]
 }
 
 """"""
-type DeleteUserNodePayload {
+type DeleteFruitPayload {
+  """"""
+  fruit(filter: FruitFilter, first: Int, offset: Int, order: FruitOrder): [Fruit]
+
+  """"""
+  msg: String
+
+  """"""
+  numUids: Int
+}
+
+""""""
+type DeletePearPayload {
   """"""
   msg: String
 
@@ -328,7 +322,7 @@ type DeleteUserNodePayload {
   numUids: Int
 
   """"""
-  userNode(filter: UserNodeFilter, first: Int, offset: Int, order: UserNodeOrder): [UserNode]
+  pear(filter: PearFilter, first: Int, offset: Int, order: PearOrder): [Pear]
 }
 
 """"""
@@ -380,6 +374,45 @@ enum DgraphIndex {
 }
 
 """"""
+interface Edible {
+  """"""
+  isMortal: Boolean!
+}
+
+""""""
+type EdibleAggregateResult {
+  """"""
+  count: Int
+}
+
+""""""
+input EdibleFilter {
+  """"""
+  and: [EdibleFilter]
+
+  """"""
+  has: [EdibleHasFilter]
+
+  """"""
+  not: EdibleFilter
+
+  """"""
+  or: [EdibleFilter]
+}
+
+""""""
+enum EdibleHasFilter {
+  """"""
+  isMortal
+}
+
+""""""
+input EdiblePatch {
+  """"""
+  isMortal: Boolean
+}
+
+""""""
 input FloatFilter {
   """"""
   between: FloatRange
@@ -410,6 +443,69 @@ input FloatRange {
 
   """"""
   min: Float!
+}
+
+""""""
+interface Fruit {
+  """"""
+  name: String!
+}
+
+""""""
+type FruitAggregateResult {
+  """"""
+  count: Int
+
+  """"""
+  nameMax: String
+
+  """"""
+  nameMin: String
+}
+
+""""""
+input FruitFilter {
+  """"""
+  and: [FruitFilter]
+
+  """"""
+  has: [FruitHasFilter]
+
+  """"""
+  not: FruitFilter
+
+  """"""
+  or: [FruitFilter]
+}
+
+""""""
+enum FruitHasFilter {
+  """"""
+  name
+}
+
+""""""
+input FruitOrder {
+  """"""
+  asc: FruitOrderable
+
+  """"""
+  desc: FruitOrderable
+
+  """"""
+  then: FruitOrder
+}
+
+""""""
+enum FruitOrderable {
+  """"""
+  name
+}
+
+""""""
+input FruitPatch {
+  """"""
+  name: String
 }
 
 """"""
@@ -562,31 +658,34 @@ input MultiPolygonRef {
 """"""
 type Mutation {
   """"""
-  addAppNode(input: [AddAppNodeInput!]!): AddAppNodePayload
+  addApple(input: [AddAppleInput!]!): AddApplePayload
 
   """"""
-  addUrlNode(input: [AddUrlNodeInput!]!): AddUrlNodePayload
+  addPear(input: [AddPearInput!]!): AddPearPayload
 
   """"""
-  addUserNode(input: [AddUserNodeInput!]!): AddUserNodePayload
+  deleteApple(filter: AppleFilter!): DeleteApplePayload
 
   """"""
-  deleteAppNode(filter: AppNodeFilter!): DeleteAppNodePayload
+  deleteEdible(filter: EdibleFilter!): DeleteEdiblePayload
 
   """"""
-  deleteUrlNode(filter: UrlNodeFilter!): DeleteUrlNodePayload
+  deleteFruit(filter: FruitFilter!): DeleteFruitPayload
 
   """"""
-  deleteUserNode(filter: UserNodeFilter!): DeleteUserNodePayload
+  deletePear(filter: PearFilter!): DeletePearPayload
 
   """"""
-  updateAppNode(input: UpdateAppNodeInput!): UpdateAppNodePayload
+  updateApple(input: UpdateAppleInput!): UpdateApplePayload
 
   """"""
-  updateUrlNode(input: UpdateUrlNodeInput!): UpdateUrlNodePayload
+  updateEdible(input: UpdateEdibleInput!): UpdateEdiblePayload
 
   """"""
-  updateUserNode(input: UpdateUserNodeInput!): UpdateUserNodePayload
+  updateFruit(input: UpdateFruitInput!): UpdateFruitPayload
+
+  """"""
+  updatePear(input: UpdatePearInput!): UpdatePearPayload
 }
 
 """"""
@@ -596,6 +695,102 @@ input NearFilter {
 
   """"""
   distance: Float!
+}
+
+""""""
+type Pear implements Fruit {
+  """"""
+  name: String!
+
+  """"""
+  weight: Int!
+}
+
+""""""
+type PearAggregateResult {
+  """"""
+  count: Int
+
+  """"""
+  nameMax: String
+
+  """"""
+  nameMin: String
+
+  """"""
+  weightAvg: Float
+
+  """"""
+  weightMax: Int
+
+  """"""
+  weightMin: Int
+
+  """"""
+  weightSum: Int
+}
+
+""""""
+input PearFilter {
+  """"""
+  and: [PearFilter]
+
+  """"""
+  has: [PearHasFilter]
+
+  """"""
+  not: PearFilter
+
+  """"""
+  or: [PearFilter]
+}
+
+""""""
+enum PearHasFilter {
+  """"""
+  name
+
+  """"""
+  weight
+}
+
+""""""
+input PearOrder {
+  """"""
+  asc: PearOrderable
+
+  """"""
+  desc: PearOrderable
+
+  """"""
+  then: PearOrder
+}
+
+""""""
+enum PearOrderable {
+  """"""
+  name
+
+  """"""
+  weight
+}
+
+""""""
+input PearPatch {
+  """"""
+  name: String
+
+  """"""
+  weight: Int
+}
+
+""""""
+input PearRef {
+  """"""
+  name: String
+
+  """"""
+  weight: Int
 }
 
 """"""
@@ -667,31 +862,28 @@ input PolygonRef {
 """"""
 type Query {
   """"""
-  aggregateAppNode(filter: AppNodeFilter): AppNodeAggregateResult
+  aggregateApple(filter: AppleFilter): AppleAggregateResult
 
   """"""
-  aggregateUrlNode(filter: UrlNodeFilter): UrlNodeAggregateResult
+  aggregateEdible(filter: EdibleFilter): EdibleAggregateResult
 
   """"""
-  aggregateUserNode(filter: UserNodeFilter): UserNodeAggregateResult
+  aggregateFruit(filter: FruitFilter): FruitAggregateResult
 
   """"""
-  getAppNode(id: ID!): AppNode
+  aggregatePear(filter: PearFilter): PearAggregateResult
 
   """"""
-  getUrlNode(id: ID!): UrlNode
+  queryApple(filter: AppleFilter, first: Int, offset: Int, order: AppleOrder): [Apple]
 
   """"""
-  getUserNode(id: ID!): UserNode
+  queryEdible(filter: EdibleFilter, first: Int, offset: Int): [Edible]
 
   """"""
-  queryAppNode(filter: AppNodeFilter, first: Int, offset: Int, order: AppNodeOrder): [AppNode]
+  queryFruit(filter: FruitFilter, first: Int, offset: Int, order: FruitOrder): [Fruit]
 
   """"""
-  queryUrlNode(filter: UrlNodeFilter, first: Int, offset: Int, order: UrlNodeOrder): [UrlNode]
-
-  """"""
-  queryUserNode(filter: UserNodeFilter, first: Int, offset: Int, order: UserNodeOrder): [UserNode]
+  queryPear(filter: PearFilter, first: Int, offset: Int, order: PearOrder): [Pear]
 }
 
 """"""
@@ -761,288 +953,87 @@ input StringTermFilter {
 }
 
 """"""
-input UpdateAppNodeInput {
+input UpdateAppleInput {
   """"""
-  filter: AppNodeFilter!
+  filter: AppleFilter!
 
   """"""
-  remove: AppNodePatch
+  remove: ApplePatch
 
   """"""
-  set: AppNodePatch
+  set: ApplePatch
 }
 
 """"""
-type UpdateAppNodePayload {
+type UpdateApplePayload {
   """"""
-  appNode(filter: AppNodeFilter, first: Int, offset: Int, order: AppNodeOrder): [AppNode]
+  apple(filter: AppleFilter, first: Int, offset: Int, order: AppleOrder): [Apple]
 
   """"""
   numUids: Int
 }
 
 """"""
-input UpdateUrlNodeInput {
+input UpdateEdibleInput {
   """"""
-  filter: UrlNodeFilter!
+  filter: EdibleFilter!
 
   """"""
-  remove: UrlNodePatch
+  remove: EdiblePatch
 
   """"""
-  set: UrlNodePatch
+  set: EdiblePatch
 }
 
 """"""
-type UpdateUrlNodePayload {
+type UpdateEdiblePayload {
+  """"""
+  edible(filter: EdibleFilter, first: Int, offset: Int): [Edible]
+
+  """"""
+  numUids: Int
+}
+
+""""""
+input UpdateFruitInput {
+  """"""
+  filter: FruitFilter!
+
+  """"""
+  remove: FruitPatch
+
+  """"""
+  set: FruitPatch
+}
+
+""""""
+type UpdateFruitPayload {
+  """"""
+  fruit(filter: FruitFilter, first: Int, offset: Int, order: FruitOrder): [Fruit]
+
+  """"""
+  numUids: Int
+}
+
+""""""
+input UpdatePearInput {
+  """"""
+  filter: PearFilter!
+
+  """"""
+  remove: PearPatch
+
+  """"""
+  set: PearPatch
+}
+
+""""""
+type UpdatePearPayload {
   """"""
   numUids: Int
 
   """"""
-  urlNode(filter: UrlNodeFilter, first: Int, offset: Int, order: UrlNodeOrder): [UrlNode]
-}
-
-""""""
-input UpdateUserNodeInput {
-  """"""
-  filter: UserNodeFilter!
-
-  """"""
-  remove: UserNodePatch
-
-  """"""
-  set: UserNodePatch
-}
-
-""""""
-type UpdateUserNodePayload {
-  """"""
-  numUids: Int
-
-  """"""
-  userNode(filter: UserNodeFilter, first: Int, offset: Int, order: UserNodeOrder): [UserNode]
-}
-
-""""""
-type UrlNode {
-  """"""
-  belong(filter: AppNodeFilter): AppNode
-
-  """"""
-  es_id: String
-
-  """"""
-  id: ID!
-
-  """"""
-  url_name: String
-
-  """"""
-  visit_time: String
-
-  """"""
-  visit_user_name(filter: UserNodeFilter): UserNode
-}
-
-""""""
-type UrlNodeAggregateResult {
-  """"""
-  count: Int
-
-  """"""
-  es_idMax: String
-
-  """"""
-  es_idMin: String
-
-  """"""
-  url_nameMax: String
-
-  """"""
-  url_nameMin: String
-
-  """"""
-  visit_timeMax: String
-
-  """"""
-  visit_timeMin: String
-}
-
-""""""
-input UrlNodeFilter {
-  """"""
-  and: [UrlNodeFilter]
-
-  """"""
-  has: [UrlNodeHasFilter]
-
-  """"""
-  id: [ID!]
-
-  """"""
-  not: UrlNodeFilter
-
-  """"""
-  or: [UrlNodeFilter]
-}
-
-""""""
-enum UrlNodeHasFilter {
-  """"""
-  belong
-
-  """"""
-  es_id
-
-  """"""
-  url_name
-
-  """"""
-  visit_time
-
-  """"""
-  visit_user_name
-}
-
-""""""
-input UrlNodeOrder {
-  """"""
-  asc: UrlNodeOrderable
-
-  """"""
-  desc: UrlNodeOrderable
-
-  """"""
-  then: UrlNodeOrder
-}
-
-""""""
-enum UrlNodeOrderable {
-  """"""
-  es_id
-
-  """"""
-  url_name
-
-  """"""
-  visit_time
-}
-
-""""""
-input UrlNodePatch {
-  """"""
-  belong: AppNodeRef
-
-  """"""
-  es_id: String
-
-  """"""
-  url_name: String
-
-  """"""
-  visit_time: String
-
-  """"""
-  visit_user_name: UserNodeRef
-}
-
-""""""
-input UrlNodeRef {
-  """"""
-  belong: AppNodeRef
-
-  """"""
-  es_id: String
-
-  """"""
-  id: ID
-
-  """"""
-  url_name: String
-
-  """"""
-  visit_time: String
-
-  """"""
-  visit_user_name: UserNodeRef
-}
-
-""""""
-type UserNode {
-  """"""
-  id: ID!
-
-  """"""
-  user_name: String
-}
-
-""""""
-type UserNodeAggregateResult {
-  """"""
-  count: Int
-
-  """"""
-  user_nameMax: String
-
-  """"""
-  user_nameMin: String
-}
-
-""""""
-input UserNodeFilter {
-  """"""
-  and: [UserNodeFilter]
-
-  """"""
-  has: [UserNodeHasFilter]
-
-  """"""
-  id: [ID!]
-
-  """"""
-  not: UserNodeFilter
-
-  """"""
-  or: [UserNodeFilter]
-}
-
-""""""
-enum UserNodeHasFilter {
-  """"""
-  user_name
-}
-
-""""""
-input UserNodeOrder {
-  """"""
-  asc: UserNodeOrderable
-
-  """"""
-  desc: UserNodeOrderable
-
-  """"""
-  then: UserNodeOrder
-}
-
-""""""
-enum UserNodeOrderable {
-  """"""
-  user_name
-}
-
-""""""
-input UserNodePatch {
-  """"""
-  user_name: String
-}
-
-""""""
-input UserNodeRef {
-  """"""
-  id: ID
-
-  """"""
-  user_name: String
+  pear(filter: PearFilter, first: Int, offset: Int, order: PearOrder): [Pear]
 }
 
 """"""

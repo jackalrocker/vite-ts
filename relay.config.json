@@ -1,11 +1,23 @@
 {
   "root": ".",
   "sources": {
-    "apps/web": "web"
+    "apps/web": "web",
+    "apps/web/src": "web2"
   },
   "excludes": ["**/node_modules/**", "**/__mocks__/**", "**/__generated__/**", "**/data/**", "codegen.ts"],
   "projects": {
     "web": {
+      "language": "typescript",
+      "schema": "apps/web/data/schema.graphql",
+      "customScalarTypes": { "DateTime": "string" },
+      "eagerEsModules": true,
+      "noFutureProofEnums": true,
+      "extraArtifactsOutput": "apps/web/src/__generated__",
+      "persist": {
+        "file": "apps/web/src/__persisted__/persistedQueries.json"
+      }
+    },
+    "web2": {
       "language": "typescript",
       "schema": "apps/web/data/schema.graphql",
       "customScalarTypes": { "DateTime": "string" },

@@ -8,6 +8,8 @@ import styleX from "vite-plugin-stylex";
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
 
+  console.log(process.cwd())
+
   return {
     plugins: [react(), styleX(), relay],
     server: {
